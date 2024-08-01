@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "663101770ae58f98fecb29e2"
+  },
+  "themePrimaryColor": {
+    "value": "#0410be"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101850ae58f98fecb29e4"
+  },
+  "themeSecondaryColor": {
+    "value": "#CFBDFF"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101970ae58f98fecb29e6"
+  },
+  "themeTertiaryColor": {
+    "value": "#A5A6F6"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101a30ae58f98fecb29e8"
+  },
+  "backgroundBodyColor": {
+    "value": "#e5e5e5"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101ad0ae58f98fecb29ea"
+  },
+  "backgroundNBColor": {
+    "value": "#333333"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101c80ae58f98fecb29ee"
+  },
+  "fontRegularTextColor": {
+    "value": "#f58491"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101e00ae58f98fecb29f2"
+  },
+  "fontDisabledTextColor": {
+    "value": "#e71313"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663101ef0ae58f98fecb29f4"
+  },
+  "borderColor": {
+    "value": "#6A6A6A"
+  },
+  "__v": 0
+}]
