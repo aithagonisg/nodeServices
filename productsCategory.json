@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "662ce28461e7b4073f013116"
+  },
+  "category": [
+    "mobile",
+    "shoes",
+    "shirts",
+    "jewelry",
+    "laptops"
+  ]
+}]

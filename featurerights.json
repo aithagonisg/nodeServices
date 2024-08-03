@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "66ad0ea192d13e9fd3425649"
+  },
+  "profileImage": {
+    "isAccessible": true
+  }
+},
+{
+  "_id": {
+    "$oid": "66ad0eb992d13e9fd342564c"
+  },
+  "userName": {
+    "isAccessible": true
+  }
+},
+{
+  "_id": {
+    "$oid": "66ad0ef892d13e9fd342564e"
+  },
+  "viewProductDetail": {
+    "isAccessible": true
+  }
+},
+{
+  "_id": {
+    "$oid": "66ad0f0292d13e9fd3425650"
+  },
+  "viewOrderSummary": {
+    "isAccessible": true
+  }
+},
+{
+  "_id": {
+    "$oid": "66ad0f1692d13e9fd3425652"
+  },
+  "aboutUsPage": {
+    "isAccessible": true
+  }
+},
+{
+  "_id": {
+    "$oid": "66ad0f1d92d13e9fd3425654"
+  },
+  "contactPage": {
+    "isAccessible": true
+  }
+}]

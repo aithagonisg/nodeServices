@@ -9,7 +9,7 @@
     "stock": 94,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/products/phones/mobile_apple_9.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_9.jpg"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "stock": 85,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/products/phones/mobile_apple_10.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_10.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "stock": 78,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/products/phones/mobile_apple_11.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_11.jpg"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "stock": 65,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/products/phones/mobile_apple_12.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_12.jpg"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "stock": 80,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/products/phones/mobile_apple_13.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_13.jpg"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "stock": 75,
     "brand": "Nike",
     "category": "shoes",
-    "image_url": "/products/footware/shoe_running.jpg"
+    "image_url": "/uploads/products/footware/shoe_running.jpg"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "stock": 68,
     "brand": "Adidas",
     "category": "shoes",
-    "image_url": "/products/footware/shoe_lady.jpg"
+    "image_url": "/uploads/products/footware/shoe_lady.jpg"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "stock": 82,
     "brand": "Puma",
     "category": "shoes",
-    "image_url": "/products/footware/shoe_sneekers.jpg"
+    "image_url": "/uploads/products/footware/shoe_sneekers.jpg"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "stock": 70,
     "brand": "New Balance",
     "category": "shoes",
-    "image_url": "/products/footware/shoe_sandal.jpg"
+    "image_url": "/uploads/products/footware/shoe_sandal.jpg"
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "stock": 60,
     "brand": "Under Armour",
     "category": "shoes",
-    "image_url": "/products/footware/shoe_casual.jpg"
+    "image_url": "/uploads/products/footware/shoe_casual.jpg"
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "stock": 120,
     "brand": "H&M",
     "category": "shirts",
-    "image_url": "/products/clothes/tshirt_black.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_black.jpg"
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "stock": 110,
     "brand": "Zara",
     "category": "shirts",
-    "image_url": "/products/clothes/tshirt_bolt.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_bolt.jpg"
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "stock": 130,
     "brand": "Tommy Hilfiger",
     "category": "shirts",
-    "image_url": "/products/clothes/tshirt_roundNexk.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_roundNexk.jpg"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "stock": 100,
     "brand": "Levi's",
     "category": "shirts",
-    "image_url": "/products/clothes/tshirt_white.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_white.jpg"
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@
     "stock": 90,
     "brand": "Gap",
     "category": "shirts",
-    "image_url": "/products/clothes/tshirt_whiteSmoke.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_whiteSmoke.jpg"
   },
   {
     "id": 16,
@@ -189,7 +189,7 @@
     "stock": 25,
     "brand": "Tiffany & Co.",
     "category": "jewelry",
-    "image_url": "/products/jwellery/plain_chain.jpg"
+    "image_url": "/uploads/products/jwellery/plain_chain.jpg"
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@
     "stock": 30,
     "brand": "Cartier",
     "category": "jewelry",
-    "image_url": "/products/jwellery/ring_plane.jpg"
+    "image_url": "/uploads/products/jwellery/ring_plane.jpg"
   },
   {
     "id": 18,
@@ -213,7 +213,7 @@
     "stock": 50,
     "brand": "Pandora",
     "category": "jewelry",
-    "image_url": "/products/jwellery/ear_ring_plane.jpg"
+    "image_url": "/uploads/products/jwellery/ear_ring_plane.jpg"
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@
     "stock": 40,
     "brand": "Mikimoto",
     "category": "jewelry",
-    "image_url": "/products/jwellery/ring_generic.jpg"
+    "image_url": "/uploads/products/jwellery/ring_generic.jpg"
   },
   {
     "id": 20,
@@ -237,7 +237,7 @@
     "stock": 20,
     "brand": "Harry Winston",
     "category": "jewelry",
-    "image_url": "/products/jwellery/ear_ring_plane.jpg"
+    "image_url": "/uploads/products/jwellery/ear_ring_plane.jpg"
   },
   {
     "id": 21,
@@ -249,7 +249,7 @@
     "stock": 50,
     "brand": "Dell",
     "category": "laptops",
-    "image_url": "/products/laptops/laptop_dell.jpg"
+    "image_url": "/uploads/products/laptops/laptop_dell.jpg"
   },
   {
     "id": 22,
@@ -261,7 +261,7 @@
     "stock": 45,
     "brand": "Apple",
     "category": "laptops",
-    "image_url": "/products/laptops/laptop_mac.jpg"
+    "image_url": "/uploads/products/laptops/laptop_mac.jpg"
   },
   {
     "id": 23,
@@ -273,7 +273,7 @@
     "stock": 55,
     "brand": "Lenovo",
     "category": "laptops",
-    "image_url": "/products/laptops/laptop_lenovo.jpg"
+    "image_url": "/uploads/products/laptops/laptop_lenovo.jpg"
   },
   {
     "id": 24,
@@ -285,7 +285,7 @@
     "stock": 60,
     "brand": "Hp",
     "category": "laptops",
-    "image_url": "/products/laptops/laptop_hp.jpg"
+    "image_url": "/uploads/products/laptops/laptop_hp.jpg"
   },
   {
     "id": 25,
@@ -297,6 +297,6 @@
     "stock": 40,
     "brand": "ASUS",
     "category": "laptops",
-    "image_url": "/products/laptops/laptop_asus.jpg"
+    "image_url": "/uploads/products/laptops/laptop_asus.jpg"
   }
 ]
