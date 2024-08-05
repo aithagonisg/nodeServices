@@ -9,11 +9,16 @@
     "stock": 94,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/uploads/products/phones/mobile_apple_9.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_9.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Red"],
+    "sizes": []
   },
   {
     "id": 2,
-    "title": "iphone 10",
+    "title": "iPhone 10",
     "description": "Flagship smartphone with advanced features",
     "price": 799,
     "discountPercentage": 10,
@@ -21,7 +26,12 @@
     "stock": 85,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/uploads/products/phones/mobile_apple_10.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_10.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Blue"],
+    "sizes": []
   },
   {
     "id": 3,
@@ -33,7 +43,12 @@
     "stock": 78,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/uploads/products/phones/mobile_apple_11.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_11.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Green"],
+    "sizes": []
   },
   {
     "id": 4,
@@ -45,7 +60,12 @@
     "stock": 65,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/uploads/products/phones/mobile_apple_12.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_12.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Gold"],
+    "sizes": []
   },
   {
     "id": 5,
@@ -57,7 +77,12 @@
     "stock": 80,
     "brand": "Apple",
     "category": "mobile",
-    "image_url": "/uploads/products/phones/mobile_apple_13.jpg"
+    "image_url": "/uploads/products/phones/mobile_apple_13.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Pink"],
+    "sizes": []
   },
   {
     "id": 6,
@@ -69,7 +94,12 @@
     "stock": 75,
     "brand": "Nike",
     "category": "shoes",
-    "image_url": "/uploads/products/footware/shoe_running.jpg"
+    "image_url": "/uploads/products/footware/shoe_running.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Red", "Blue", "Black"],
+    "sizes": ["7", "8", "9", "10", "11"]
   },
   {
     "id": 7,
@@ -81,7 +111,12 @@
     "stock": 68,
     "brand": "Adidas",
     "category": "shoes",
-    "image_url": "/uploads/products/footware/shoe_lady.jpg"
+    "image_url": "/uploads/products/footware/shoe_lady.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["White", "Black", "Gray"],
+    "sizes": ["6", "7", "8", "9", "10"]
   },
   {
     "id": 8,
@@ -93,7 +128,12 @@
     "stock": 82,
     "brand": "Puma",
     "category": "shoes",
-    "image_url": "/uploads/products/footware/shoe_sneekers.jpg"
+    "image_url": "/uploads/products/footware/shoe_sneekers.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Red"],
+    "sizes": ["6", "7", "8", "9", "10"]
   },
   {
     "id": 9,
@@ -105,7 +145,12 @@
     "stock": 70,
     "brand": "New Balance",
     "category": "shoes",
-    "image_url": "/uploads/products/footware/shoe_sandal.jpg"
+    "image_url": "/uploads/products/footware/shoe_sandal.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Blue", "Gray", "White"],
+    "sizes": ["7", "8", "9", "10", "11"]
   },
   {
     "id": 10,
@@ -117,7 +162,12 @@
     "stock": 60,
     "brand": "Under Armour",
     "category": "shoes",
-    "image_url": "/uploads/products/footware/shoe_casual.jpg"
+    "image_url": "/uploads/products/footware/shoe_casual.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "Red", "White"],
+    "sizes": ["6", "7", "8", "9", "10"]
   },
   {
     "id": 11,
@@ -129,7 +179,12 @@
     "stock": 120,
     "brand": "H&M",
     "category": "shirts",
-    "image_url": "/uploads/products/clothes/tshirt_black.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_black.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "White", "Gray"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 12,
@@ -141,7 +196,12 @@
     "stock": 110,
     "brand": "Zara",
     "category": "shirts",
-    "image_url": "/uploads/products/clothes/tshirt_bolt.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_bolt.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Blue", "White", "Gray"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 13,
@@ -153,7 +213,12 @@
     "stock": 130,
     "brand": "Tommy Hilfiger",
     "category": "shirts",
-    "image_url": "/uploads/products/clothes/tshirt_roundNexk.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_roundNexk.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Red", "Blue", "White"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 14,
@@ -165,7 +230,12 @@
     "stock": 100,
     "brand": "Levi's",
     "category": "shirts",
-    "image_url": "/uploads/products/clothes/tshirt_white.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_white.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Blue", "Black"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 15,
@@ -177,7 +247,12 @@
     "stock": 90,
     "brand": "Gap",
     "category": "shirts",
-    "image_url": "/uploads/products/clothes/tshirt_whiteSmoke.jpg"
+    "image_url": "/uploads/products/clothes/tshirt_whiteSmoke.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["White", "Gray", "Black"],
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 16,
@@ -189,7 +264,12 @@
     "stock": 25,
     "brand": "Tiffany & Co.",
     "category": "jewelry",
-    "image_url": "/uploads/products/jwellery/plain_chain.jpg"
+    "image_url": "/uploads/products/jwellery/plain_chain.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Gold", "Silver"],
+    "sizes": ["One Size"]
   },
   {
     "id": 17,
@@ -201,7 +281,12 @@
     "stock": 30,
     "brand": "Cartier",
     "category": "jewelry",
-    "image_url": "/uploads/products/jwellery/ring_plane.jpg"
+    "image_url": "/uploads/products/jwellery/ring_plane.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Gold"],
+    "sizes": ["6", "7", "8", "9", "10"]
   },
   {
     "id": 18,
@@ -213,7 +298,12 @@
     "stock": 50,
     "brand": "Pandora",
     "category": "jewelry",
-    "image_url": "/uploads/products/jwellery/ear_ring_plane.jpg"
+    "image_url": "/uploads/products/jwellery/ear_ring_plane.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Silver"],
+    "sizes": ["One Size"]
   },
   {
     "id": 19,
@@ -225,7 +315,12 @@
     "stock": 40,
     "brand": "Mikimoto",
     "category": "jewelry",
-    "image_url": "/uploads/products/jwellery/ring_generic.jpg"
+    "image_url": "/uploads/products/jwellery/ring_generic.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Gold", "Silver"],
+    "sizes": ["6", "7", "8", "9", "10"]
   },
   {
     "id": 20,
@@ -237,7 +332,12 @@
     "stock": 20,
     "brand": "Harry Winston",
     "category": "jewelry",
-    "image_url": "/uploads/products/jwellery/ear_ring_plane.jpg"
+    "image_url": "/uploads/products/jwellery/ear_ring_plane.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Gold", "Silver"],
+    "sizes": ["One Size"]
   },
   {
     "id": 21,
@@ -249,7 +349,12 @@
     "stock": 50,
     "brand": "Dell",
     "category": "laptops",
-    "image_url": "/uploads/products/laptops/laptop_dell.jpg"
+    "image_url": "/uploads/products/laptops/laptop_dell.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black", "Gray"],
+    "sizes": []
   },
   {
     "id": 22,
@@ -261,7 +366,12 @@
     "stock": 45,
     "brand": "Apple",
     "category": "laptops",
-    "image_url": "/uploads/products/laptops/laptop_mac.jpg"
+    "image_url": "/uploads/products/laptops/laptop_mac.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Silver", "Gray"],
+    "sizes": []
   },
   {
     "id": 23,
@@ -273,7 +383,12 @@
     "stock": 55,
     "brand": "Lenovo",
     "category": "laptops",
-    "image_url": "/uploads/products/laptops/laptop_lenovo.jpg"
+    "image_url": "/uploads/products/laptops/laptop_lenovo.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Black"],
+    "sizes": []
   },
   {
     "id": 24,
@@ -285,7 +400,12 @@
     "stock": 60,
     "brand": "Hp",
     "category": "laptops",
-    "image_url": "/uploads/products/laptops/laptop_hp.jpg"
+    "image_url": "/uploads/products/laptops/laptop_hp.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Silver", "Black"],
+    "sizes": []
   },
   {
     "id": 25,
@@ -297,6 +417,11 @@
     "stock": 40,
     "brand": "ASUS",
     "category": "laptops",
-    "image_url": "/uploads/products/laptops/laptop_asus.jpg"
+    "image_url": "/uploads/products/laptops/laptop_asus.jpg",
+    "quantity": 0,
+    "totalPrice": 0,
+    "inCart": false,
+    "colors": ["Gray", "Black"],
+    "sizes": []
   }
 ]

@@ -7,10 +7,17 @@ const getTheme = async (req, res) => {
 const addTheme = async (req, res) => {
   try {
     const newTheme = await themeModel.create(req.body);
-    res.status(201).json({ success: true, data: newTheme });
+    res.status(201).json({
+      success: true,
+      data: newTheme,
+      message: "New Theme Added Successfully",
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong please check...",
+    });
   }
 };
 
@@ -38,7 +45,10 @@ const updateTheme = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong please check...",
+    });
   }
 };
 
@@ -48,13 +58,18 @@ const deleteTheme = async (req, res) => {
       _id: req.body._id,
     });
     if (deleteResult.deletedCount > 0) {
-      res.json({ success: true, message: "Feature deleted successfully" });
+      res.json({ success: true, message: "Theme deleted successfully" });
     } else {
-      res.json({ success: false, message: "Feature not found" });
+      res.json({ success: false, message: "Theme not found" });
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res
+      .status(500)
+      .json({
+        error: "Internal Server Error",
+        message: "Something went wrong please check...",
+      });
   }
 };
 module.exports = { getTheme, updateTheme, addTheme, deleteTheme };

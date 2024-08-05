@@ -8,10 +8,17 @@ const getFeature = async (req, res) => {
 const addFeature = async (req, res) => {
   try {
     const newFeature = await featureModel.create(req.body);
-    res.status(201).json({ success: true, data: newFeature });
+    res.status(201).json({
+      success: true,
+      data: newFeature,
+      message: "New right Added successfully",
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong please check...",
+    });
   }
 };
 
@@ -37,7 +44,10 @@ const updateFeature = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong please check...",
+    });
   }
 };
 
@@ -53,7 +63,10 @@ const deleteFeature = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong please check...",
+    });
   }
 };
 
