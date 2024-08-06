@@ -1,5 +1,8 @@
 const usersModel = require("../models/usersModel");
 const { authentication } = require("../middlewares/middleware");
+const usersCart = require("../models/userCartModel");
+const featureModel = require("../models/featureModel");
+const themeModel = require("../models/themeModel");
 
 const login = async (req, res) => {
   try {
@@ -13,7 +16,7 @@ const login = async (req, res) => {
         email: user.email,
         role: user.role,
       });
-      res.json({
+      res.status(200).json({
         userId: user._id,
         message: "Login successful",
         email: user.email,
@@ -39,9 +42,29 @@ const register = async (req, res) => {
       email: user.email,
       role: user.role,
     });
+
+    const userCart = await new usersCart({
+      userId: user._id,
+      productDetails: [],
+    });
+    await userCart.save();
+
+    const featureList = await new featureModel({
+      userId: user._id,
+      featureList: [],
+    });
+    await featureList.save();
+
+    const themeList = await new themeModel({
+      userId: user._id,
+      themeList: [],
+    });
+
+    await themeList.save();
+
     res.json({
       userId: user._id,
-      message: "Resgistered successful",
+      message: "Registered successful",
       email: user.email,
       firstName: user.firstName,
       lastName: user.lastName,

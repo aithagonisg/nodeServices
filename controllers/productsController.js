@@ -1,6 +1,8 @@
 // controllers/productController.js
 
+const { default: mongoose } = require("mongoose");
 const Product = require("../models/productsModel");
+const UserCart = require("../models/userCartModel");
 
 // Controller function to get a list of products with pagination, search, and filtering
 const getProducts = async (req, res) => {
@@ -54,4 +56,95 @@ const getProduct = async (req, res) => {
   }
 };
 
-module.exports = { getProducts, getProduct };
+const addProductToCart = async (req, res) => {
+  try {
+    const userId = req.body.userId;
+    const productDetails = req.body.productDetails;
+
+    // Check if the user's cart already exists
+    let userCart = await UserCart.findOne({ userId: userId });
+
+    if (userCart) {
+      // If the cart exists, add the new product details to the array
+      userCart.productDetails.push(productDetails);
+    } else {
+      // If the cart doesn't exist, create a new cart for the user
+      userCart = new UserCart({
+        userId: userId,
+        productDetails: [productDetails],
+      });
+    }
+    // Save the changes
+    await userCart.save();
+
+    res
+      .status(200)
+      .json({ message: "Product added to cart successfully", userCart });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error", error });
+  }
+};
+
+const removeProductFromCart = async (req, res) => {
+  try {
+    const { userId, productId } = req.body;
+
+    // Remove the product from the user's cart
+    const result = await UserCart.updateOne(
+      { userId: userId },
+      { $pull: { productDetails: { productId: productId } } }
+    );
+
+    if (result.modifiedCount > 0) {
+      res
+        .status(200)
+        .json({ message: "Product removed from cart successfully" });
+    } else {
+      res.status(404).json({
+        message: "Product not found in cart or user cart does not exist",
+      });
+    }
+  } catch (error) {
+    console.error("Error removing product from cart:", error);
+    res.status(500).json({ message: "Internal server error", error });
+  }
+};
+
+const removeAllProductsFromCart = async (req, res) => {
+  try {
+    const { userId } = req.body;
+
+    // Update and return the updated document
+    const updatedCart = await UserCart.findOneAndUpdate(
+      { userId: userId },
+      { $set: { productDetails: [] } },
+      { new: true } // Return the modified document
+    );
+
+    console.log("Updated Cart:", updatedCart);
+
+    if (updatedCart) {
+      res
+        .status(200)
+        .json({
+          message: "All products removed from cart successfully",
+          cart: updatedCart,
+        });
+    } else {
+      res.status(404).json({ message: "User cart does not exist" });
+    }
+  } catch (error) {
+    console.error("Error removing all products from cart:", error);
+    res.status(500).json({ message: "Internal server error", error });
+  }
+};
+
+module.exports = { removeProductFromCart };
+module.exports = {
+  getProducts,
+  getProduct,
+  addProductToCart,
+  removeProductFromCart,
+  removeAllProductsFromCart,
+};

@@ -1,7 +1,19 @@
 const mongoose = require("mongoose");
 
+const featureItemSchema = new mongoose.Schema({
+  _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
+  featureName: String,
+  featureValue: String,
+});
+
 const featureSchema = new mongoose.Schema(
-  {},
+  {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
+    featureList: [featureItemSchema],
+  },
   { strict: false, versionKey: false }
 );
 

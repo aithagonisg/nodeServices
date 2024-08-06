@@ -1,6 +1,12 @@
 const express = require("express");
 const { login, register } = require("./controllers/usersController");
-const { getProducts, getProduct } = require("./controllers/productsController");
+const {
+  getProducts,
+  getProduct,
+  addProductToCart,
+  removeProductFromCart,
+  removeAllProductsFromCart,
+} = require("./controllers/productsController");
 const {
   getTheme,
   updateTheme,
@@ -59,9 +65,15 @@ router.delete("/v1/common/:userId/profile-image", async (req, res) => {
   }
 });
 
-router.get("/v1/user/theme", getTheme);
+router.post("/v1/user/theme", getTheme);
 
-router.get("/v1/user/feature", getFeature);
+router.post("/v1/user/feature", getFeature);
+
+router.post("/v1/user/add-to-cart", addProductToCart);
+
+router.post("/v1/user/remove-from-cart", removeProductFromCart);
+
+router.post("/v1/user/remove-all-from-cart", removeAllProductsFromCart);
 
 // admin routes
 

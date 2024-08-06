@@ -1,12 +1,39 @@
 const themeModel = require("../models/themeModel");
 const getTheme = async (req, res) => {
-  const theme = await themeModel.find({});
-  res.json(theme);
+  try {
+    const userId = req.body.userId;
+    const themeData = await themeModel.findOne({ userId });
+
+    if (themeData) {
+      res.json(themeData.themeList);
+    } else {
+      res.json([]);
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong, please check...",
+    });
+  }
 };
 
 const addTheme = async (req, res) => {
   try {
-    const newTheme = await themeModel.create(req.body);
+    const { userId, ...newTheme } = req.body;
+
+    let themeData = await themeModel.findOne({ userId });
+
+    if (themeData) {
+      themeData.themeList.push(newTheme);
+      await themeData.save();
+    } else {
+      themeData = await themeModel.create({
+        userId,
+        themeList: [newTheme],
+      });
+    }
+
     res.status(201).json({
       success: true,
       data: newTheme,
@@ -16,60 +43,73 @@ const addTheme = async (req, res) => {
     console.error(error);
     res.status(500).json({
       error: "Internal Server Error",
-      message: "Something went wrong please check...",
+      message: "Something went wrong, please check...",
     });
   }
 };
 
 const updateTheme = async (req, res) => {
   try {
-    const themesToUpdate = req.body;
-    const updatePromises = themesToUpdate.map(async (theme) => {
-      const featureId = theme._id;
-      const updateResult = await themeModel.findOneAndUpdate(
-        { _id: featureId },
-        { $set: theme },
-        { new: true }
+    const userId = req.body.userId;
+    const { _id, ...updatedFields } = req.body.themeInfo;
+    const themeData = await themeModel.findOne({ userId });
+    if (themeData) {
+      const themeIndex = themeData.themeList.findIndex(
+        (theme) => theme._id.toString() === _id
       );
-      return updateResult;
-    });
 
-    const results = await Promise.all(updatePromises);
+      if (themeIndex !== -1) {
+        themeData.themeList[themeIndex] = {
+          ...themeData.themeList[themeIndex],
+          ...updatedFields,
+        };
 
-    const modifiedThemes = results.filter((result) => result);
-
-    if (modifiedThemes.length > 0) {
-      res.json({ success: true, message: "Themes updated successfully" });
+        await themeData.save();
+        res.json({ success: true, message: "Theme updated successfully" });
+      } else {
+        res.json({ success: false, message: "Theme not found" });
+      }
     } else {
-      res.json({ success: false, message: "No themes were updated" });
+      res.json({ success: false, message: "No themes found for user" });
     }
   } catch (error) {
     console.error(error);
     res.status(500).json({
       error: "Internal Server Error",
-      message: "Something went wrong please check...",
+      message: "Something went wrong, please check...",
     });
   }
 };
 
 const deleteTheme = async (req, res) => {
   try {
-    const deleteResult = await themeModel.deleteOne({
-      _id: req.body._id,
-    });
-    if (deleteResult.deletedCount > 0) {
-      res.json({ success: true, message: "Theme deleted successfully" });
+    const userId = req.body.userId;
+    const themeId = req.body.themeId;
+
+    const themeData = await themeModel.findOne({ userId });
+
+    if (themeData) {
+      const originalLength = themeData.themeList.length;
+      themeData.themeList = themeData.themeList.filter(
+        (theme) => theme._id.toString() !== themeId
+      );
+
+      if (themeData.themeList.length < originalLength) {
+        await themeData.save();
+        res.json({ success: true, message: "Theme deleted successfully" });
+      } else {
+        res.json({ success: false, message: "Theme not found" });
+      }
     } else {
-      res.json({ success: false, message: "Theme not found" });
+      res.json({ success: false, message: "No themes found for user" });
     }
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({
-        error: "Internal Server Error",
-        message: "Something went wrong please check...",
-      });
+    res.status(500).json({
+      error: "Internal Server Error",
+      message: "Something went wrong, please check...",
+    });
   }
 };
+
 module.exports = { getTheme, updateTheme, addTheme, deleteTheme };
