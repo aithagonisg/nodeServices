@@ -1,6 +1,4 @@
-// controllers/productController.js
-
-const { default: mongoose } = require("mongoose");
+const Orders = require("../models/orders");
 const Product = require("../models/productsModel");
 const UserCart = require("../models/userCartModel");
 
@@ -17,7 +15,7 @@ const getProducts = async (req, res) => {
       search,
     } = req.body; // Assuming categories come in the request body
     const filters = {};
-    if (categories.length > 0) {
+    if (categories?.length > 0) {
       // If categories is provided as an array, create an array of conditions
       filters.category = Array.isArray(categories)
         ? { $in: categories }
@@ -125,12 +123,10 @@ const removeAllProductsFromCart = async (req, res) => {
     console.log("Updated Cart:", updatedCart);
 
     if (updatedCart) {
-      res
-        .status(200)
-        .json({
-          message: "All products removed from cart successfully",
-          cart: updatedCart,
-        });
+      res.status(200).json({
+        message: "All products removed from cart successfully",
+        cart: updatedCart,
+      });
     } else {
       res.status(404).json({ message: "User cart does not exist" });
     }
@@ -140,11 +136,64 @@ const removeAllProductsFromCart = async (req, res) => {
   }
 };
 
-module.exports = { removeProductFromCart };
+const getOrders = async (req, res) => {
+  const userId = req.body.userId;
+  let orders = await Orders.findOne({ userId: userId });
+
+  // Iterate through each order and check delivery status
+  orders.orderDetails = orders.orderDetails.map((order) => {
+    order.orderMeta.isDelivered =
+      new Date() > new Date(order.orderMeta.expectedDeliveryDate);
+    return order;
+  });
+
+  return res.status(200).send(orders.orderDetails);
+};
+
+const placeTheOrder = async (req, res) => {
+  try {
+    const userId = req.body.userId;
+    const orderDetails = req.body.orderDetails;
+    const paymentDetails = req.body.paymentDetails;
+
+    // Check if the user's cart already exists
+    let orders = await Orders.findOne({ userId: userId });
+
+    if (orders) {
+      orders.orderDetails.push({
+        orderInfo: orderDetails,
+        paymentDetails: paymentDetails,
+      });
+    } else {
+      // If the cart doesn't exist, create a new cart for the user
+      orders = new Orders({
+        userId: userId,
+        orderDetails: [
+          {
+            orderInfo: orderDetails,
+            paymentDetails: paymentDetails,
+          },
+        ],
+      });
+    }
+    // Save the changes
+    await orders.save();
+
+    res
+      .status(200)
+      .json({ message: "Product added to cart successfully", orders });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error", error });
+  }
+};
+
 module.exports = {
   getProducts,
   getProduct,
   addProductToCart,
   removeProductFromCart,
   removeAllProductsFromCart,
+  placeTheOrder,
+  getOrders,
 };

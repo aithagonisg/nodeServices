@@ -5,16 +5,9 @@ const getFeature = async (req, res) => {
     const userId = req.body.userId;
     const featureData = await featureModel.findOne({ userId });
     if (featureData) {
-      res.status(200).json({
-        success: true,
-        data: featureData.featureList,
-        message: "Features retrieved successfully",
-      });
+      res.json(featureData.featureList);
     } else {
-      res.status(404).json({
-        success: false,
-        message: "No features found for this user",
-      });
+      res.status(404).json([]);
     }
   } catch (error) {
     console.error(error);
@@ -66,7 +59,7 @@ const updateFeature = async (req, res) => {
 
     if (featureData) {
       const featureIndex = featureData.featureList.findIndex(
-        (feature) => feature._id.toString() === featureId
+        (feature) => feature._id.toString() === _id
       );
 
       if (featureIndex !== -1) {
@@ -96,15 +89,15 @@ const deleteFeature = async (req, res) => {
     const userId = req.body.userId;
     const featureId = req.body.featureId;
 
-    const featureData = await themeModel.findOne({ userId });
+    const featureData = await featureModel.findOne({ userId });
 
     if (featureData) {
-      const originalLength = featureData.themeList.length;
-      featureData.themeList = featureData.themeList.filter(
+      const originalLength = featureData.featureList.length;
+      featureData.featureList = featureData.featureList.filter(
         (theme) => theme._id.toString() !== featureId
       );
 
-      if (featureData.themeList.length < originalLength) {
+      if (featureData.featureList.length < originalLength) {
         await featureData.save();
         res.json({ success: true, message: "Theme deleted successfully" });
       } else {

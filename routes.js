@@ -1,11 +1,13 @@
 const express = require("express");
-const { login, register } = require("./controllers/usersController");
+const { login, register, getUsers } = require("./controllers/usersController");
 const {
   getProducts,
   getProduct,
   addProductToCart,
   removeProductFromCart,
   removeAllProductsFromCart,
+  getOrders,
+  placeTheOrder,
 } = require("./controllers/productsController");
 const {
   getTheme,
@@ -31,6 +33,8 @@ const router = express.Router();
 router.post("/v1/common/register", register);
 
 router.post("/v1/common/login", login);
+
+router.get("/v1/common/getUsers", getUsers);
 
 router.post("/v1/common/products", getProducts);
 
@@ -74,6 +78,10 @@ router.post("/v1/user/add-to-cart", addProductToCart);
 router.post("/v1/user/remove-from-cart", removeProductFromCart);
 
 router.post("/v1/user/remove-all-from-cart", removeAllProductsFromCart);
+
+router.post("/v1/user/getOrders", getOrders);
+
+router.post("/v1/user/place-the-order", placeTheOrder);
 
 // admin routes
 

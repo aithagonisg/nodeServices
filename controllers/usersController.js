@@ -78,4 +78,38 @@ const register = async (req, res) => {
   }
 };
 
-module.exports = { login, register };
+const getUsers = async (req, res) => {
+  try {
+    const users = await usersModel.aggregate([
+      {
+        $project: {
+          _id: 1,
+          firstName: 1,
+          lastName: 1,
+        },
+      },
+      {
+        $addFields: { userId: "$_id" },
+      },
+      {
+        $project: {
+          _id: 0,
+          userId: 1,
+          firstName: 1,
+          lastName: 1,
+        },
+      },
+    ]);
+
+    const userList = users.map((item) => ({
+      userId: item.userId,
+      userName: `${item.firstName} ${item.lastName}`,
+    }));
+
+    res.status(200).json(userList);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching users", error });
+  }
+};
+
+module.exports = { login, register, getUsers };

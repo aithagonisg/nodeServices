@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const featureItemSchema = new mongoose.Schema({
   _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
   featureName: String,
-  featureValue: String,
+  featureValue: Boolean,
 });
 
 const featureSchema = new mongoose.Schema(
