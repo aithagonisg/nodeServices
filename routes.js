@@ -8,6 +8,7 @@ const {
   removeAllProductsFromCart,
   getOrders,
   placeTheOrder,
+  getCategories,
 } = require("./controllers/productsController");
 const {
   getTheme,
@@ -82,6 +83,8 @@ router.post("/v1/user/remove-all-from-cart", removeAllProductsFromCart);
 router.post("/v1/user/getOrders", getOrders);
 
 router.post("/v1/user/place-the-order", placeTheOrder);
+
+router.get("/v1/user/getCategories", getCategories);
 
 // admin routes
 

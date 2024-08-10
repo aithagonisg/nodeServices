@@ -1,13 +1,14 @@
 const Orders = require("../models/orders");
 const Product = require("../models/productsModel");
 const UserCart = require("../models/userCartModel");
+const ProductsCategory = require("../models/productsCategoiresModel");
 
 // Controller function to get a list of products with pagination, search, and filtering
 const getProducts = async (req, res) => {
   try {
     const {
       page = 1,
-      limit = 20,
+      limit = 25,
       categories,
       brand,
       priceMin,
@@ -188,6 +189,11 @@ const placeTheOrder = async (req, res) => {
   }
 };
 
+const getCategories = async (req, res) => {
+  let categories = await ProductsCategory.find({});
+  res.status(200).json(categories[0].category);
+};
+
 module.exports = {
   getProducts,
   getProduct,
@@ -196,4 +202,5 @@ module.exports = {
   removeAllProductsFromCart,
   placeTheOrder,
   getOrders,
+  getCategories,
 };

@@ -3,6 +3,7 @@ const { authentication } = require("../middlewares/middleware");
 const usersCart = require("../models/userCartModel");
 const featureModel = require("../models/featureModel");
 const themeModel = require("../models/themeModel");
+const OrderModel = require("../models/orders");
 
 const login = async (req, res) => {
   try {
@@ -61,6 +62,12 @@ const register = async (req, res) => {
     });
 
     await themeList.save();
+
+    const ordersList = await new OrderModel({
+      userId: user._id,
+      orderDetails: [],
+    });
+    await ordersList.save();
 
     res.json({
       userId: user._id,
