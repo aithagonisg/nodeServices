@@ -55,6 +55,21 @@ const getProduct = async (req, res) => {
   }
 };
 
+const getProductsFromCart = async (req, res) => {
+  try {
+    const userId = req.body.userId;
+    // Check if the user's cart already exists
+    let userCart = await UserCart.findOne({ userId: userId });
+
+    res.status(200).json({
+      message: "Available Products in Cart",
+      cart: userCart?.productDetails,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error", error });
+  }
+};
 const addProductToCart = async (req, res) => {
   try {
     const userId = req.body.userId;
@@ -203,4 +218,5 @@ module.exports = {
   placeTheOrder,
   getOrders,
   getCategories,
+  getProductsFromCart,
 };

@@ -9,6 +9,7 @@ const {
   getOrders,
   placeTheOrder,
   getCategories,
+  getProductsFromCart,
 } = require("./controllers/productsController");
 const {
   getTheme,
@@ -73,6 +74,8 @@ router.delete("/v1/common/:userId/profile-image", async (req, res) => {
 router.post("/v1/user/theme", getTheme);
 
 router.post("/v1/user/feature", getFeature);
+
+router.post("/v1/user/get-from-cart", getProductsFromCart);
 
 router.post("/v1/user/add-to-cart", addProductToCart);
 
