@@ -25,7 +25,7 @@ const login = async (req, res) => {
         lastName: user.lastName,
         mobile: user.mobile,
         role: user.role,
-        authToken: token,
+        authToken: `Bearer ${token}`,
         profileImage: user?.profileImage,
       });
     } else {
@@ -77,7 +77,7 @@ const register = async (req, res) => {
       lastName: user.lastName,
       mobile: user.mobile,
       role: user.role,
-      authToken: token,
+      authToken: `Bearer ${token}`,
       profileImage: user?.profileImage,
     });
   } else {
@@ -119,4 +119,10 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = { login, register, getUsers };
+const getUserInfo = async (req, res) => {
+  const userId = req.body.userId;
+  const userInfo = await usersModel.find({ _id: userId }, { password: 0 });
+  res.status(200).json(userInfo);
+};
+
+module.exports = { login, register, getUsers, getUserInfo };

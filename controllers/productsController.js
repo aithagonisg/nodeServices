@@ -107,7 +107,7 @@ const removeProductFromCart = async (req, res) => {
     // Remove the product from the user's cart
     const result = await UserCart.updateOne(
       { userId: userId },
-      { $pull: { productDetails: { productId: productId } } }
+      { $pull: { productDetails: { _id: productId } } }
     );
 
     if (result.modifiedCount > 0) {
