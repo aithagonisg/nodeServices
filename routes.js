@@ -4,6 +4,7 @@ const {
   register,
   getUsers,
   getUserInfo,
+  updateUserInfo,
 } = require("./controllers/usersController");
 const {
   getProducts,
@@ -67,6 +68,7 @@ router.get("/v1/common/product", autherization, getProduct);
 router.post("/v1/common/:userId/profile-image", autherization, (req, res) => {
   const userId = req.params.userId;
   profileUpload(userId).single("image")(req, res, async function (err) {
+    console.log(req);
     if (err) {
       return res.status(500).json(err);
     } else if (err) {
@@ -99,6 +101,8 @@ router.delete(
 
 router.post("/v1/user/get-user-info", autherization, getUserInfo);
 
+router.post("/v1/user/update-user-info", autherization, updateUserInfo);
+
 router.post("/v1/user/theme", autherization, getTheme);
 
 router.post("/v1/user/feature", autherization, getFeature);
@@ -124,14 +128,14 @@ router.get("/v1/user/getCategories", autherization, getCategories);
 router.post("/v1/user/add-address", autherization, addAddress);
 router.post("/v1/user/update-address", autherization, updateAddress);
 router.post("/v1/user/delete-address", autherization, deleteAddress);
-router.post("v1/user/make-address-active", autherization, makeAsActiveAddress);
-router.post("v1/user/get-address-list", autherization, getAddressList);
+router.post("/v1/user/make-address-active", autherization, makeAsActiveAddress);
+router.post("/v1/user/get-address-list", autherization, getAddressList);
 
 router.post("/v1/user/add-card", autherization, addCard);
 router.post("/v1/user/update-card", autherization, updateCard);
 router.post("/v1/user/delete-card", autherization, deleteCard);
-router.post("v1/user/make-card-active", autherization, makeAsActiveCard);
-router.post("v1/user/get-card-list", autherization, getCardsList);
+router.post("/v1/user/make-card-active", autherization, makeAsActiveCard);
+router.post("/v1/user/get-card-list", autherization, getCardsList);
 
 // admin routes
 

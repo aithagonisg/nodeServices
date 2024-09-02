@@ -92,7 +92,7 @@ const makeAsActiveAddress = async (req, res) => {
 
 const getAddressList = async (req, res) => {
   try {
-    const { userId, addressId } = req.params;
+    const { userId } = req.body;
     const user = await User.findOne({ userId });
 
     if (!user)

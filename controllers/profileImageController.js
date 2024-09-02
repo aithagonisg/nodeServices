@@ -26,8 +26,10 @@ const deleteImagePath = async (userId) => {
     if (!user) {
       throw new Error("User not found");
     }
+
     if (user.profileImage) {
-      await fs.unlink(`uploads/${user.profileImage}`);
+      const profilePath = user.profileImage.split("/uploads/")[1];
+      await fs.unlink(`uploads/${profilePath}`);
       user.profileImage = "";
       await user.save();
       return "Profile image removed successfully";

@@ -125,4 +125,16 @@ const getUserInfo = async (req, res) => {
   res.status(200).json(userInfo);
 };
 
-module.exports = { login, register, getUsers, getUserInfo };
+const updateUserInfo = async (req, res) => {
+  const userId = req.body.userId;
+  const updatedUserInfo = req.body.userInfo;
+  const userInfo = await usersModel.findOne({ _id: userId });
+  if (userInfo) {
+    Object.assign(userInfo, updatedUserInfo);
+    await userInfo.save();
+    res.status(200).json({ message: "User Info is Updated Successfully" });
+  } else {
+    res.status(401).json({ message: "User Not found" });
+  }
+};
+module.exports = { login, register, getUsers, getUserInfo, updateUserInfo };

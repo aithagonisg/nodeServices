@@ -4,9 +4,11 @@ const path = require("path");
 const profileUpload = (userId) => {
   const storage = multer.diskStorage({
     destination: function (req, file, cb) {
+      console.log(file);
       cb(null, "uploads/");
     },
     filename: function (req, file, cb) {
+      console.log(file);
       cb(null, userId + path.extname(file.originalname));
     },
   });
